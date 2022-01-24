@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest                        # specify the base operating system
     container:
         image: leopoul/markmap:1.0.0
-        options: -v  $(pwd)/markdown/:/app
+        options: -v  /__w/testing_markmap/testing_markmap/markdown/:/app
     steps:
       - name: Checkout repo content               # fetch the contents of the repository
         uses: actions/checkout@v2
