@@ -27,7 +27,7 @@ jobs:
           options: -v ${{ github.workspace }}/markdown:/app:rw
           run: |
             echo "Running Script"
-            /app/test.md -o /app/test.html
+            markmap /app/test.md -o /app/test.html
       - name: Prepare build environment
         run: pwd && ls -al /app
       - name: Deploy on github pages              # Use a third-party plugin to upload the content
