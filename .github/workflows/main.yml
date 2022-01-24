@@ -24,7 +24,7 @@ jobs:
       - uses: addnab/docker-run-action@v3
         with:
           image: leopoul/markmap:1.0.0
-          options: -v ${{ github.workspace }}/markdown:/app
+          options: -v ${{ github.workspace }}/markdown:/app:rw
           run: |
             echo "Running Script"
             /app/test.md -o /app/test.html
