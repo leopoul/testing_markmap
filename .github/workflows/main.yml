@@ -18,12 +18,16 @@ on:
 jobs:
   deploy:                                         # a free machine-readable name for this job
     runs-on: ubuntu-latest                        # specify the base operating system
-    container:
-        image: leopoul/markmap:1.0.0
-        options: -v  /__w/testing_markmap/testing_markmap/markdown/:/app
     steps:
       - name: Checkout repo content               # fetch the contents of the repository
         uses: actions/checkout@v2
+      - uses: addnab/docker-run-action@v3
+        with:
+          image: eopoul/markmap:1.0.0
+          options: -v ${{ github.workspace }}/markdown:/app
+          run: |
+            echo "Running Script"
+            markmap /app/test.md -o /app/test.html
       - name: Prepare build environment
         run: pwd && ls -al /app
       - name: Deploy on github pages              # Use a third-party plugin to upload the content
