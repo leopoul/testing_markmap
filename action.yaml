@@ -1,6 +1,0 @@
-# action.yml
-name: 'MarkMapper'
-description: 'Transform a markdown file to a markmap'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
