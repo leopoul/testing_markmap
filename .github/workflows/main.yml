@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
       - uses: addnab/docker-run-action@v3
         with:
-          image: eopoul/markmap:1.0.0
+          image: leopoul/markmap:1.0.0
           options: -v ${{ github.workspace }}/markdown:/app
           run: |
             echo "Running Script"
